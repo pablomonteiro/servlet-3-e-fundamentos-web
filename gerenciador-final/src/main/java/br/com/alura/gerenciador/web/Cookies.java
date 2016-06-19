@@ -10,12 +10,13 @@ public class Cookies {
 		this.cookies = cookies;
 	}
 
-	public Cookie buscaUsuarioLogado() {
-		if(cookies ==null) return null;
-		for(Cookie cookie : cookies) {
-			if(cookie.getName().equals("usuario.logado")) {
-				return cookie;
-			}
+	public Cookie getUsuarioLogado() {
+		if(cookies != null) {
+			for(Cookie cookie : cookies){
+				if("usuario.logado".equals(cookie.getName())){
+					return cookie;
+				}
+			}			
 		}
 		return null;
 	}
